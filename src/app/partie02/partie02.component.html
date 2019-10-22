@@ -1,0 +1,21 @@
+<h2>Affichagedesélémentspairsdutableau</h2>
+<ul>
+    <ng-container *ngFor="let t of tab">
+        <li *ngIf="t%2==0" > {{t}} </li>
+            </ng-container><br>
+    <ng-container *ngFor="let t of tab">
+        <li> {{t}} <span *ngIf="t%2==0; then block2 else block1"></span> </li>
+            </ng-container><br>
+    <ng-template #block1 > impaire </ng-template>
+    <ng-template #block2 > paire </ng-template>
+    <ng-container *ngFor="let t of tab">
+        <li> {{t}} <span *ngIf="t%2==0;else block1 "> paire </span> </li>
+            </ng-container><br>
+     <ng-container *ngFor="let t of tab">
+        <li> {{t}} <ng-container [ngSwitch]="t%2"> 
+            <span *ngSwitchCase="0" > paire </span>
+            <span *ngSwitchDefault > impaire</span>
+            </ng-container> </li>
+                    </ng-container>
+                    
+</ul>

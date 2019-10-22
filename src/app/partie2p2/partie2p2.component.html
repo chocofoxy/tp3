@@ -1,0 +1,11 @@
+<h1>correspondance Mois/Season</h1>
+<p>donner numero de mois :</p><input type="number" [(ngModel)]="mois" min="1" max="12" />
+<p>le mois {{mois}} est 
+    <ng-container [ngSwitch]="verif(mois)">
+     <span *ngSwitchCase="4">winter</span>
+     <span *ngSwitchCase="0">winter</span>
+     <span *ngSwitchCase="1">sprint</span>
+     <span *ngSwitchCase="2">summer</span>
+     <span *ngSwitchCase="3">automne</span>
+    </ng-container>
+    </p>
