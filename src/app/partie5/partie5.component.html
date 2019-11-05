@@ -1,0 +1,11 @@
+<h1> Affichage des étudiants </h1>
+<ul>
+  <li *ngFor="let etudiant of etudiants ; let i = index"> {{ i  | customEtudiantName }}
+    <ul>
+      <li> {{ etudiant.prenom }} {{ etudiant.nom | uppercase }} </li>
+      <li> {{ etudiant.date | date}} </li>
+      <li [ngStyle]="getClass(etudiant.moyenne)"> {{ etudiant.moyenne | customMoy }} </li>
+      <li *ngIf=" etudiant.ville != 'Tunis' "> {{ etudiant.ville }} </li>
+    </ul>
+  </li>
+</ul>

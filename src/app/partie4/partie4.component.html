@@ -1,0 +1,9 @@
+<h1 [ngClass]="selected"> Coloriage </h1>
+Couleur :<input type="text" #colorSelector > <br>
+<select #fontSelector>
+  <option *ngFor="let font of police" [value]="font"> {{ font }}</option>
+</select>
+<button type="button" name="button" (click)="bindstyle(fontSelector.value,colorSelector.value)"> Changer </button>
+ <span [style.color]="couleur" [style.font-family]="font" > Resultat </span> <br>
+Choix  du theme :
+<span *ngFor="let style of theme" > <input type="radio"  [(ngModel)]="selected" [value]="style.value"> {{ style.name }} </span>
